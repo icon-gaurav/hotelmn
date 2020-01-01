@@ -22,6 +22,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified', 'is_admi
     Route::resource('/customers', 'CustomerController');
 
     Route::resource('/rooms', 'RoomController');
+
+    Route::resource('/bookings','BookingController');
+
+    Route::resource('/images','ImageController');
 });
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified', 'is_emp']], function () {
